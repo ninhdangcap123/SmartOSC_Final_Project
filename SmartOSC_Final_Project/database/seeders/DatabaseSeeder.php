@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Couchbase\UserSettings;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,5 +15,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        $this->call(LgastableSeeder::class);
+        $this->call(NationalitiesTableSeeder::class);
+        $this->call(StatesTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
+        $this->call(UserTypesTableSeeder::class);
     }
 }
